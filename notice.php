@@ -13,7 +13,6 @@
     <style>
     </style>
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
     <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>

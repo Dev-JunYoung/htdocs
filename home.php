@@ -2,8 +2,8 @@
     
 -->
 <?php
-            $email=$_GET['email'];
-            $password=$_GET['password'];
+            $email=$_POST['email'];
+            $password=$_POST['password'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,7 +28,6 @@ font-family: 'Numans', sans-serif;
 </style>
     <link rel="stylesheet" href="css/style.css">
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
   </head>
   <body>
 <main>

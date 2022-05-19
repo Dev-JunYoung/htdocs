@@ -212,7 +212,7 @@ margin-left: 4px;
   <!---->
   <label for="exampleFormControlTextarea1" class="form-label">비밀번호</label>  
   <br>
-  <button type="button" class="btn btn-secondary" onclick="window.open">비밀번호변경</button>
+  <button type="button" class="btn btn-secondary" onclick="updatePassword();">비밀번호변경</button>
 </div>
 <div class="mb-3">
   <!--이름-->
@@ -256,7 +256,12 @@ margin-left: 4px;
 </form>
 </main>
 
+<script>
+           function updatePassword(){
+             window.alert("비밀번호 변경입니다.. ");
+           }
 
+          </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
       

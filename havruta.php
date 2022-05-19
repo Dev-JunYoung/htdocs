@@ -16,7 +16,6 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
   </head>
   <body>
   <?php include("header.php"); ?>

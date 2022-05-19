@@ -58,7 +58,6 @@ $last_week = date('w', mktime(0, 0, 0, $month, $max_day, $year));
     font.black {font-family: tahoma;font-size: 20px;color: #000000;}
     </style>
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
     <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>

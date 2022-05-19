@@ -45,7 +45,6 @@
 <link rel="stylesheet" href="css/style.css">
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
     <script type="text/javascript" src="dist/js/service/HuskyEZCreator.js" charset="utf-8"></script>
     
 

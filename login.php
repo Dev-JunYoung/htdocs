@@ -91,26 +91,39 @@
         </div>
         <div class="card-body">
               <!--여기서 form 태그 넣어야함 -->
-          <form method="get" action="home.php">
+          <form method="post" action="home.php">
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>           
-              <input type="email" class="form-control" placeholder="email" name="email">   
+              <input type="email" class="form-control" placeholder="email" name="email" id="email" required>   
             </div>
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
-              <input type="password" class="form-control" placeholder="password" name="password">
+              <input type="password" class="form-control" placeholder="password" name="password" id="password" required>
             </div>
             <div class="row align-items-center remember">
               <input type="checkbox">Remember Me
             </div>
+          
             <div class="form-group">
-              <input type="submit" value="Login" class="btn float-right login_btn">
+            <button type="submit" value="Login" class="btn float-right login_btn" id="btn" onclick="getValueInput()">로그인</button>
+            
+              
             </div>
           </form>
+
+          <script> 
+              const getValueInput = () =>{
+                let email = document.getElementById("email").value; 
+                if(email ==""){
+                    window.alert("이메일을 입력하세요.")
+                    <input type="submit" value="Login" class="btn float-right login_btn" id="btn" >
+                }
+              }
+            </script> 
         </div>
         <div class="card-footer">
           <div class="d-flex justify-content-center links">
@@ -126,6 +139,22 @@
 </main>
   <!--post 확인용  완료 -->
 
+  <script>
+    let email = $('#email');
+    let password = $('#password');
+    let btn = $('#btn');
+
+    $(btn).on('click',function(){
+      if($(email).val()==""){
+        $(email).next('label').addClass('warning');
+      }
+      elseif ($(password).val()==""){
+        $(password).next('label').addClass('warning');
+      }
+    })
+    
+
+  </script>
  
       
 

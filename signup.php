@@ -24,9 +24,10 @@
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!--Custom styles
+	-->
 
+  <link rel="stylesheet" type="text/css" href="css/style.css">
     <!------ Include the above in your HEAD tag ---------->
 
 
@@ -37,12 +38,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#712cf9">
 
 
@@ -61,65 +56,6 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
-.container{
-height: 100%;
-align-content: center;
-}
-
-.card{
-height: 400px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
-}
-
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
-}
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
-
-.card-header h3{
-color: white;
-}
-
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
-}
-
-.input-group-prepend span{
-width: 50px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
-}
-
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
-}
-
-.remember{
-color: white;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
 .login_btn{
 color: black;
 background-color: #FFC312;
@@ -131,65 +67,8 @@ color: black;
 background-color: white;
 }
 
-.links{
-color: white;
-}
 
-.links a{
-margin-left: 4px;
-}
-
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+   
 
       #datetext{
         color: aliceblue;
@@ -201,7 +80,6 @@ margin-left: 4px;
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
   </head>
   <body>
     
@@ -240,46 +118,68 @@ margin-left: 4px;
 		
 			</div>
 			<div class="card-body">
-				<form method="post" action="mypage.php">
+				<form method="post" action="mypage.php" onsubmit="return check()">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
             <!--이메일-->
-						<input type="email" class="form-control" placeholder="email" name="email">
+						<input type="email" class="form-control" placeholder="email" name="email" required>
             <!-- 중복 확인 코드-->
-            <button type="button" class="btn btn-secondary">중복확인</button>
+            <button type="button" class="btn btn-secondary" onclick="emailcheck();">중복확인</button>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
             <!--비밀번호-->
-						<input type="password" class="form-control" placeholder="password" name="password">
+						<input type="password" class="form-control" placeholder="password" name="password" id="password" required>
 					</div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
             <!--비밀번호 확인-->
-						<input type="password" class="form-control" placeholder="password-checked">
+						<input type="password" class="form-control" placeholder="password-checked" id="passwordchecked" required>
+            
 					</div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
             <!--이름-->
-						<input type="text" class="form-control" placeholder="이름" name="name" >            
+						<input type="text" class="form-control" placeholder="이름" name="name"  required>            
 					</div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
             <!--캘린더-->
-						<input type="date" class="form-control" placeholder="" name="date">            
+						<input type="date" class="form-control" placeholder="" name="date" required>            
             <div id="datetext">팀노바 시작일</div>
 					</div>      
 					<div class="form-group">
+          <script>
+           function emailcheck(){
+             window.alert("중복확인입니다. ");
+           }
+           function check(){
+            var password=document.getElementById('password').value;
+            var passwordchecked=document.getElementById('passwordchecked').value;
+            if(password==passwordchecked){
+              return true;
+            }else{
+              window.alert("패스워드가 일치하지 않습니다. ");
+              return false;
+            }
+          
+
+              
+           }
+           
+          </script>
+
+
             <!-- 제출 -->
 						<input type="submit" value="sign-up" class="btn float-right login_btn">
 					</div>
