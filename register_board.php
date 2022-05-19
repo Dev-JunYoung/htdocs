@@ -86,20 +86,17 @@
     <div class="left"></div>
     <div class="center">
         <!-- 표시할 textarea 영역 --> 
-
-        
-     
       <label for="level-select">게시글 선택</label>
       <br>
       <form action="read.php" method="post">
-    <select name="pets" id="pet-select">
+    <select name="kind" id="pet-select">
         <option value="">----</option>
-        <option value="news">IT뉴스</option>
-        <option value="contest">대회소식</option>
-        <option value="employment">수료자 취업소식</option>
+        <option value="IT뉴스">IT뉴스</option>
+        <option value="대회소식">대회소식</option>
+        <option value="수료자 취업소식">수료자 취업소식</option>
     </select>
         <input type="text" width="40px" class="form-control" placeholder="제목을 입력해 주세요." name="title" ></input>
-        <textarea name="content" id="ir1" rows="20" cols="100" ></textarea>       
+        <textarea name="ir1" id="ir1" rows="20" cols="100" ></textarea>       
         <!-- 페이지 로딩시 초기화 --> 
         <script type="text/javascript">
         var oEditors = [];
@@ -109,8 +106,17 @@
         sSkinURI: "dist/SmartEditor2Skin.html",
         fCreator: "createSEditor2"
         });
+        function submitContents(elClickedObj) {
+            // 에디터의 내용이 textarea에 적용됩니다.
+            oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+
+            try {
+                elClickedObj.form.submit();
+            } catch(e) {}
+            }
         </script>
-        <input style="margin-left:1000px" type="submit" class="btn btn-success" value="등록"></input>
+        <input style="margin-left:1000px" type="submit" class="btn btn-success"  onclick="submitContents(this)" value="등록"></input>
         </form>
 
     

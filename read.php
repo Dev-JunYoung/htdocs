@@ -2,8 +2,8 @@
 
 <?php
   $title = $_POST['title'];
-  $content = $_POST['content'];
-  echo $content;
+  $ir1 = $_POST['ir1'];
+  $kind = $_POST['kind'];
 ?>
 
 <!doctype html>
@@ -46,6 +46,7 @@
 }
 .center{
   flex: 5;
+  
 }
 .right{
   flex: 1;
@@ -56,6 +57,12 @@
 .table_wrapper{
     margin-left:200px;
     margin-right:200px;
+}
+.board{
+  margin:50px;
+}
+.button{
+  float: right;
 }
 
 </style>
@@ -132,30 +139,47 @@
     <div class="center">
     <div id="title">  
             <h1>read board</h1>      
+            </div>  
+      <div class="board">
+      </div>
+    
             <!---->
+            <div class="button">
+            <button type="button"  type="submit"  class="btn btn-secondary">이전글</button>
+            <button type="button" type="submit"  class="btn btn-secondary">다음글</button> 
+            <input  type="submit"  value="목록"  class="btn btn-success"/>
+            </div>
+            
             <div class="table_wrapper">
-                <table class="table" width="" height="">자유게시판
+            
+                <table class="table" width="" height=""><?php echo $kind?>
                         <td style="font-size : 2em;   font-weight: bold ;"><?php echo $title ?></td>   
                         
+                        <td width="200"></td>
                     </tr>
                     <tr>
-                        <td >실리콘밸리/김성민 특파원</td>
-                        <td width="200"> 2022. 05. 17. 14:28</td>
+                        <td >작성자 : 실리콘밸리/김성민 특파원</td>
+                        <td width="250px">작성일 : 2022. 05. 17. 14:28</td>
                     </tr>
                     <tr>
-                    <td style="letter-spacing:1px;line-height:200%"><?php echo $content ?></td>
+                    <td style="letter-spacing:1px;line-height:200%"><?php echo $ir1 ?></td>
                     </tr>
                 </table>
+                
+  <form method="post">
+  
+  </form>
+
+          <div>
+            댓글            
+          </div>
+          <textarea>              
+            </textarea>
+            <input  type="submit"  value="등록"  class="btn btn-light"/>
             </div>
-            <?php echo $content ?>
-            <div>게시글 타이틀</div>
-            <div>게시글 내용</div>
 
 
-
-
-  </div>  
-    <button style="margin-left:1200px" type="button" class="btn btn-success" onclick="location.href=''" >뒤로가기</button>
+  
     </div>
     <div class="right"></div>
   </div>
